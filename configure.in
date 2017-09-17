@@ -1,0 +1,33 @@
+#                                               -*- Autoconf -*-
+# Process this file with autoconf to produce a configure script.
+
+AC_PREREQ([2.69])
+AC_INIT([Honkinator], [3000], [<darkfm@vera.com.uy>],[honk3000])
+AC_CONFIG_SRCDIR([appfuncs.cpp])
+AC_CONFIG_HEADERS([config.h])
+
+# Checks for programs.
+AC_LANG(C++)
+AC_PROG_CXX
+
+# Checks for libraries.
+AC_CHECK_HEADERS([FL/Fl.H Fl.H Fl.h], [break;])
+AC_CHECK_LIB([fltk], [main], [], [
+  AC_MSG_ERROR([unable to find fltk library.])
+])
+AC_CHECK_LIB([fltk_images], [main], [], [
+  AC_MSG_ERROR([unable to find fltk_images library.])
+])
+
+# Checks for header files.
+AC_CHECK_HEADERS([stdlib.h string.h])
+AC_CHECK_HEADERS([unistd.h])
+
+# Checks for typedefs, structures, and compiler characteristics.
+AC_TYPE_SIZE_T
+
+# Checks for library functions.
+AC_FUNC_MALLOC
+AC_CHECK_FUNCS([strdup])
+
+AC_OUTPUT(Makefile)

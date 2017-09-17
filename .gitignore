@@ -1,0 +1,4 @@
+*.o
+configure
+config.h
+auto*

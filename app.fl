@@ -1,0 +1,48 @@
+# data file for the Fltk User Interface Designer (fluid)
+version 1.0304
+header_name {.h}
+code_name {.cxx}
+Function {make_window()} {open
+} {
+  Fl_Window {} {
+    label {Honkinator 3000} open
+    xywh {797 169 285 220} type Double visible
+  } {
+    Fl_Group {} {open
+      xywh {1 18 282 35} box DOWN_FRAME
+    } {
+      Fl_Input MIDText {
+        label {MIDI input:}
+        xywh {97 23 104 25}
+      }
+      Fl_Button {} {
+        label {Choose...}
+        callback {getfile(MIDText,".mid",0);}
+        xywh {206 23 75 25}
+      }
+    }
+    Fl_Group {} {open
+      xywh {1 60 282 35} box DOWN_FRAME
+    } {
+      Fl_Input WAVText {
+        label {WAV output:}
+        xywh {97 65 104 25}
+      }
+      Fl_Button {} {
+        label {Choose...}
+        callback {getfile(WAVText,".wav",2);}
+        xywh {206 66 75 24}
+      }
+    }
+    Fl_Button {} {
+      label {Honkize!}
+      callback {honk(MIDText->value(),WAVText->value());}
+      xywh {55 140 180 55} box ROUND_UP_BOX color 176 labelfont 11 labelsize 30 labelcolor 88
+    }
+  }
+}
+decl {extern int getfile(Fl_Input*,char*,int);} {selected public global
+}
+decl {\#include "honkconv.h"} {public global
+}
+
