@@ -3,15 +3,21 @@
 
 AC_PREREQ([2.69])
 AC_INIT([Honkinator], [3000], [<darkfm@vera.com.uy>],[honk3000])
+AC_CANONICAL_TARGET
 AC_CONFIG_SRCDIR([appfuncs.cpp])
-AC_CONFIG_HEADERS([config.h])
+AC_CONFIG_HEADER([config.h])
 
 # Checks for programs.
 AC_LANG(C++)
 AC_PROG_CXX
 
 # Checks for libraries.
-AC_CHECK_HEADERS([FL/Fl.H Fl.H Fl.h], [break;])
+unset fltkconfig
+AC_CHECK_PROGS([fltkconfig],[fltk-config])
+
+if test "x$fltkconfig" = x; then
+	AC_MSG_ERROR([fltk-config not found])
+fi
 
 # Checks for header files.
 AC_CHECK_HEADERS([stdlib.h string.h])

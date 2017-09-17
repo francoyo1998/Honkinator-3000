@@ -1,5 +1,5 @@
 CXX=@CXX@
-CXXFLAGS=@CXXFLAGS@
+CXXFLAGS=@CXXFLAGS@ $(shell fltk-config --cxxflags)
 FLTKFLAGS=$(shell fltk-config --ldflags)
 
 honkinator: app.o appfuncs.o main.o honkconv.o
