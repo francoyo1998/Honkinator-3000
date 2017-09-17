@@ -3,7 +3,6 @@
 
 AC_PREREQ([2.69])
 AC_INIT([Honkinator], [3000], [<darkfm@vera.com.uy>],[honk3000])
-AC_CANONICAL_TARGET
 AC_CONFIG_SRCDIR([appfuncs.cpp])
 AC_CONFIG_HEADER([config.h])
 
