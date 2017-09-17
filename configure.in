@@ -12,12 +12,6 @@ AC_PROG_CXX
 
 # Checks for libraries.
 AC_CHECK_HEADERS([FL/Fl.H Fl.H Fl.h], [break;])
-AC_CHECK_LIB([fltk], [main], [], [
-  AC_MSG_ERROR([unable to find fltk library.])
-])
-AC_CHECK_LIB([fltk_images], [main], [], [
-  AC_MSG_ERROR([unable to find fltk_images library.])
-])
 
 # Checks for header files.
 AC_CHECK_HEADERS([stdlib.h string.h])
