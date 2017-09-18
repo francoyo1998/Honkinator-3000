@@ -10,6 +10,6 @@ extern Fl_Input *MIDText;
 #include <FL/Fl_Button.H>
 extern Fl_Input *WAVText;
 Fl_Double_Window* make_window();
-extern int getfile(Fl_Input*,char*,int);
-#include "honkconv.h"
+#include "appfuncs.cpp"
+#include "honkconv.cpp"
 #endif

@@ -1,4 +1,4 @@
-#include "app.h"
+#include "app.cxx"
 int main()
 {
 	Fl_Window *wn = make_window();

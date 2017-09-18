@@ -1,7 +1,6 @@
-#include "config.h"
 #include <cstring>
 #include <cstdlib>
-#ifndef HAVE_UNISTD_H
+#ifdef _WIN32
 #include <direct.h>
 #define getcwd _getcwd
 #else
