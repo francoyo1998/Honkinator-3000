@@ -2,6 +2,10 @@
 version 1.0304
 header_name {.h}
 code_name {.cxx}
+decl {\#include "appfuncs.cpp"} {selected public global
+}
+decl {\#include "honkconv.cpp"} {public global
+}
 Function {make_window()} {open
 } {
   Fl_Window {} {
@@ -40,9 +44,5 @@ Function {make_window()} {open
       xywh {55 140 180 55} box ROUND_UP_BOX color 176 labelfont 11 labelsize 30 labelcolor 88
     }
   }
-}
-decl {extern int getfile(Fl_Input*,char*,int);} {selected public global
-}
-decl {\#include "honkconv.h"} {public global
 }
 
