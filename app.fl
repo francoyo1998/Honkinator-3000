@@ -21,7 +21,7 @@ Function {make_window()} {open
       }
       Fl_Button {} {
         label {Choose...}
-        callback {getfile(MIDText,".mid",0);}
+        callback {getfile(MIDText,(char*)".mid",0);}
         xywh {206 23 75 25}
       }
     }
@@ -34,7 +34,7 @@ Function {make_window()} {open
       }
       Fl_Button {} {
         label {Choose...}
-        callback {getfile(WAVText,".wav",2);}
+        callback {getfile(WAVText,(char*)".wav",2);}
         xywh {206 66 75 24}
       }
     }
