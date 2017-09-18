@@ -2,3 +2,7 @@
 configure
 config.h
 auto*
+*.status
+*.log
+*.exe
+Makefile
